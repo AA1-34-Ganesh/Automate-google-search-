@@ -1,0 +1,17 @@
+!pip install googlesearch-python
+from googlesearch import search
+
+def google_search(query, num_results=10):
+    try:
+        # Retrieve search results
+        results = [result for result in search(query, num_results=num_results)]
+        print(f"Top {num_results} results for '{query}':")
+        for i, result in enumerate(results, start=1):
+            print(f"{i}. {result}")
+        return results
+    except Exception as e:
+        print(f"Error occurred during Google Search: {e}")
+        return None
+
+query = "yoputube"
+results = google_search(query)
